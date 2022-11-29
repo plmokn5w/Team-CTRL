@@ -1,0 +1,42 @@
+baseURL = "https://plmokn5w.github.io/"
+languageCode = "en-us"
+title = "Team-CTRL"
+theme = "hello-friend"
+paginate = 5
+
+[params]
+  contentTypeName = "posts"
+  defaultTheme = "dark"
+  showMenuItems = 2
+
+  showReadingTime = false
+
+[languages]
+  [languages.en]
+    title = "Team-CTRL"
+    keywords = ""
+    copyright = ""
+    menuMore = "Show more"
+    writtenBy = "Written by"
+    readMore = "Read more"
+    readOtherPosts = "Read other posts"
+    newerPosts = "Newer posts"
+    olderPosts = "Older posts"
+    minuteReadingTime = "min read"
+    dateFormatSingle = "2006-01-02"
+    dateFormatList = "2006-01-02"
+
+    [languages.en.params.logo]
+      logoText = "Team-CTRL"
+      logoHomeLink = "/"
+
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "About Us"
+        name = "About"
+        url = "/about"
+      [[languages.en.menu.main]]
+        identifier = "github"
+        name = "Our Github"
+        url = "https://github.com/plmokn5w/Team-CTRL"
+        
