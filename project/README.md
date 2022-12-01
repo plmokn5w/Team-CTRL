@@ -64,5 +64,6 @@
 	
 	(Week 13)
 	
-	Create a project report
 	Suggest modifying the opengame_2.py file
+	Implement Object, Player, Monster, EXP class
+	Modularize library.py
