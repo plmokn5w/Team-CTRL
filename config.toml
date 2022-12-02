@@ -7,9 +7,8 @@ paginate = 5
 [params]
   contentTypeName = "posts"
   defaultTheme = "dark"
-  showMenuItems = 2
-
-  showReadingTime = false
+  showMenuItems = 3
+  showReadingTime = true
 
 [languages]
   [languages.en]
@@ -33,8 +32,14 @@ paginate = 5
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "About Us"
-        name = "About"
+        name = "About Us"
         url = "/about"
+
+      [[languages.en.menu.main]]
+        identifier = "showcase"
+        name = "Project"
+        url = "/project"
+        
       [[languages.en.menu.main]]
         identifier = "github"
         name = "Our Github"
