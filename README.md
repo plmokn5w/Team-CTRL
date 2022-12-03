@@ -38,6 +38,11 @@
 	- Configure the blog menu and create the about.md, config.toml
 	- Update Git repository to manage blogs and project folders
 	
+	(Week 14)
+	- Add blog project menu
+	- Update README.md / blog about.md
+	- Create a game description page
+	
 	
 #### [khb7](https://github.com/khb7)
 
