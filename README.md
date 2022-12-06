@@ -68,6 +68,15 @@
 	- Create object classes to manage multiple elements
 	- Create game settings and update game character features
 	
+	
+	(Week 14)
+	
+	- Resize the game screen and create a new background
+	- Create class related to in-game sound generation
+	- Apply a class which make the background move when a direction key event occurs
+	- Makes the elements move with the background
+	- Makes the background can go on indefinitely
+	
 
 #### [plmokn5w](https://github.com/plmokn5w)
 
