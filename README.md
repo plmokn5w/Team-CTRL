@@ -95,5 +95,8 @@
 
 	(Week 14)
 
-	- Implement Weapon, Bullet class
-	- Implement fixed camera
+	- Implementing a Weapon class about a player's bullet
+	- Fire a bullet at the monster closest to the player
+	- Implement Bullet classes created from Weapon
+	- gave a delay so that the bullet could be fired at an appropriate interval
+	- fix the player in the middle of the screen by drawing objects based on the player
