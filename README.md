@@ -19,7 +19,7 @@
 	- Create graphics of game monsters
 	- Resize character graphics for game application
 	
-	
+
 #### [highlees](https://github.com/highlees)
 
 	(Week 12)
@@ -76,3 +76,8 @@
 	- Suggest modifying the opengame_2.py file
 	- Implement Object, Player, Monster, EXP class
 	- Modularize library.py
+
+	(Week 14)
+
+	- Implement Weapon, Bullet class
+	- Implement fixed camera
