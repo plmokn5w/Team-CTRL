@@ -19,6 +19,13 @@
 	- Create graphics of game monsters
 	- Resize character graphics for game application
 	
+	(Week 14)
+	- The class divided separately because it would be difficult 
+	to implement because only the stats was changed in the Monster class.
+	-Implement the monster's bullet class and make it a hit
+	- Implementation of rotating pictures to match the position of the monster and player
+	- Implement range_out classes and stack_overflow classes
+	
 
 #### [highlees](https://github.com/highlees)
 
