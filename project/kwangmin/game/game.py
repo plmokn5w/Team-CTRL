@@ -15,11 +15,12 @@ running = True
 background = Object((screen_width / 2, screen_height / 2), "background")
 player = Player("character_scientist", 100, 6)
 
-for _ in range(5):
-    degree=random.randint(1,360)
-    dx=math.cos(degree)*200
-    dy=math.sin(degree)*200
-    zero_division((player.x + dx, player.y + dy), player)
+degree=random.randint(1,360)
+zero_division((player.x + math.cos(degree)*200, player.y + math.sin(degree)*200), player)
+degree=random.randint(1,360)
+stack_overflow((player.x + math.cos(degree)*200, player.y + math.sin(degree)*200), player)
+degree=random.randint(1,360)
+range_out((player.x + math.cos(degree)*200, player.y + math.sin(degree)*200), player)
 
 # 게임
 while running:
@@ -50,6 +51,8 @@ while running:
     player.move()
 
     for monster in monster_list:
+        if type(monster)==range_out_body:
+            continue
         monster.move()
         if monster.collide(player):
             monster.die()
@@ -69,6 +72,8 @@ while running:
     screen.blit(background.img, (background.x, background.y))
     screen.blit(player.img, (player.x, player.y))
     for monster in monster_list:
+        if type(monster)==range_out:
+            monster.paint(screen)
         screen.blit(monster.img, (monster.x, monster.y))
     for monster_bullet in monster_bullet_list:
         screen.blit(monster_bullet.img,(monster_bullet.x,monster_bullet.y))
