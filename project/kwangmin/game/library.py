@@ -120,7 +120,7 @@ class bullet(Object):
         vec_y = player.y - self.y
         side = math.sqrt(vec_y ** 2 + vec_x ** 2)
         self.vector=(vec_x/side*self.speed,vec_y/side*self.speed)#(math.atan2(vec_y,vec_x)*180/math.pi)
-        self.img=pygame.transform.rotate(self.img,math.atan2(vec_y,vec_x)*180/math.pi)
+        self.img=pygame.transform.rotate(self.img,math.atan(vec_x/vec_y)*180/math.pi)
         self.img=pygame.transform.scale(self.img,(10, 30))
         self.rect = self.img.get_rect()
         monster_bullet_list.append(self)
@@ -137,7 +137,7 @@ class stack_overflow(Object):
         self.player = player
         self.x += self.width / 2
         self.y += self.height / 2
-        self.img = pygame.transform.scale(self.img, (70, 70))
+        self.img = pygame.transform.scale(self.img, (100, 100))
         self.rect = self.img.get_rect()
         size = self.rect.size
         self.width = size[0]
@@ -146,10 +146,10 @@ class stack_overflow(Object):
         self.y -= self.height / 2
         self.rect.left = self.x
         self.rect.top = self.y
-        self.max_hp = 1
+        self.max_hp = 10
         self.hp = self.max_hp
-        self.speed = 3
-        self.dmg = 2
+        self.speed = 1
+        self.dmg = 4
         monster_list.append(self)
 
     def move(self):
@@ -177,29 +177,64 @@ class range_out(Object):
         self.y -= self.height / 2
         self.rect.left = self.x
         self.rect.top = self.y
-        self.max_hp = 1
+        self.max_hp = 5
         self.hp = self.max_hp
-        self.speed = 3
-        self.dmg = 2
-        self.rocation=[[self.x,self.y] for _ in range(99)]
+        self.speed = 2
+        self.dmg = 3
+        self.body=[range_out_body((self.x,self.y), self)]
+        for i in range(9):
+            self.body.append(range_out_body((self.x,self.y), self.body[i]))
         monster_list.append(self)
-
+    def collide(self, obj):
+        if self.rect.colliderect(obj.rect):
+            return True
+        for body in self.body:
+            if body.collide(obj):
+                return True
+        return False
     def move(self):
         vec_x = self.player.x - self.x
         vec_y = self.player.y - self.y
         side = math.sqrt(vec_y ** 2 + vec_x ** 2)
         super().move((vec_x / side * self.speed, vec_y / side * self.speed))
-        self.rocation.pop()
-        self.rocation.append((vec_x / side * self.speed, vec_y / side * self.speed))
-        #for x in range(100):
-        #    if x%10==9:
-
-
+        #self.img=pygame.transform.rotate(self.img,(vec_x/vec_y))
+        for body in self.body:
+            body.move(self.speed)
+    def paint(self,screen):
+        for body in self.body[-1:]:
+            screen.blit(body.img,(body.x, body.y))
     def die(self):
         EXP(self, "exp")
         monster_list.remove(self)
+        for body in self.body:
+            monster_list.remove(body)
 
-
+class range_out_body(Object):
+    def __init__(self,monster_pos, front):
+        super().__init__(monster_pos,"range_out_body")
+        self.front = front
+        self.x += self.width / 2
+        self.y += self.height / 2
+        self.img = pygame.transform.scale(self.img, (70, 70))
+        self.rect = self.img.get_rect()
+        size = self.rect.size
+        self.width = size[0]
+        self.height = size[1]
+        self.x -= self.width / 2
+        self.y -= self.height / 2
+        self.rect.left = self.x
+        self.rect.top = self.y
+        monster_list.append(self)
+    def move(self, speed):
+        vec_x = self.front.x - self.x
+        vec_y = self.front.y - self.y
+        side = math.sqrt(vec_y ** 2 + vec_x ** 2)
+        if 40 + 3 < side != 0:
+            super().move((vec_x / side * speed, vec_y / side * speed))
+        elif 40 - 3 > side != 0:
+            super().move((vec_x / side * -speed, vec_y / side * -speed))
+    def collide(self, obj):
+        return self.rect.colliderect(obj.rect)
 # 경험치
 class EXP(Object):
     def __init__(self, monster, path):
