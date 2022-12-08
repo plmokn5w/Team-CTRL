@@ -116,7 +116,7 @@ while running:
     w_y = - (player.y + player.height / 2) + screen_height / 2
 
     for bullet in player_bullet_list:
-        screen.blit(bullet.img, (bullet.x + w_x, bullet.y + w_y))
+        screen.blit(monster_bullet.rotated_image, (monster_bullet.x + monster_bullet.img.get_width() / 2 - monster_bullet.rotated_image.get_width() / 2,monster_bullet.y + monster_bullet.img.get_height() / 2 - monster_bullet.rotated_image.get_height() / 2))
     for exp in exp_list:
         screen.blit(exp.img, (exp.x, exp.y))
     screen.blit(exp_bar.img, (0, 0))
