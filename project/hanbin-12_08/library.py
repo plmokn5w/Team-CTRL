@@ -148,8 +148,8 @@ class bullet(Object):
         vec_y = player.y - self.y
         side = math.sqrt(vec_y ** 2 + vec_x ** 2)
         self.vector = (vec_x / side * self.speed, vec_y / side * self.speed)  # (math.atan2(vec_y,vec_x)*180/math.pi)
-        self.img = pygame.transform.rotate(self.img, math.atan(vec_x / vec_y) * 180 / math.pi)
         self.img = pygame.transform.scale(self.img, (15, 45))
+        self.rotated_image=pygame.transform.rotate(self.img,math.atan(vec_x/vec_y)*180/math.pi)
         self.rect = self.img.get_rect()
         monster_bullet_list.append(self)
 
