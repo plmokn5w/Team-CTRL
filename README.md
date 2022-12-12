@@ -50,6 +50,9 @@
 	- Update README.md / blog about.md
 	- Create a game description page
 	
+	(Week 15)
+	- Create a project overview of the final report
+	- Update README.md
 	
 #### [khb7](https://github.com/khb7)
 
