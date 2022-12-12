@@ -52,6 +52,7 @@
 	
 	(Week 15)
 	- Create a project overview of the final report
+	- Create presentation slides
 	- Update README.md
 	
 #### [khb7](https://github.com/khb7)
