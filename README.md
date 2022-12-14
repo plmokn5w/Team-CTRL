@@ -11,7 +11,6 @@
 	- Update README.md
 	- Help team members set up Git remote storage
 	
-	
 	(Week 13)
 	
 	- Implement basic capability values, movement, 
@@ -25,6 +24,12 @@
 	-Implement the monster's bullet class and make it a hit
 	- Implementation of rotating pictures to match the position of the monster and player
 	- Implement range_out classes and stack_overflow classes
+	
+	(Week 15)
+	
+	- Create an illustrated book emphasizing that 
+	it is a journey of error with the developer
+	- Implementation of the game start screen
 	
 
 #### [highlees](https://github.com/highlees)
@@ -55,6 +60,7 @@
 	- Create presentation slides
 	- Update README.md
 	
+	
 #### [khb7](https://github.com/khb7)
 
 	(Week 12)
@@ -81,6 +87,16 @@
 	- Makes the elements move with the background
 	- Makes the background can go on indefinitely
 	
+	(Week 15)
+	
+	- Fix game background errors
+	- Creating character and monster stamina
+	- Game over when character and monster collide or physical strength is below zero
+	- Implement automatic monster generation
+	- Add capability to limit the number of monsters created
+	- Implement EXP to turn it into a heart with a certain probability
+	- Consolidate final version files
+	
 
 #### [plmokn5w](https://github.com/plmokn5w)
 
@@ -104,3 +120,9 @@
 	- Implement Bullet classes created from Weapon
 	- gave a delay so that the bullet could be fired at an appropriate interval
 	- fix the player in the middle of the screen by drawing objects based on the player
+	
+	(Week 15)
+	
+	- Implementation to allow selection when player level up
+	- Choices appear randomly for each level up
+	- Select a choice to strengthen the player
