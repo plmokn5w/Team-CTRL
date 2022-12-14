@@ -403,3 +403,22 @@ class Bullet(Object):
         self.y += self.v_y
         self.rect.left = self.x
         self.rect.top = self.y
+    
+class Option:
+    def __init__(self, path):
+        self.name = path
+        self.img = pygame.image.load(os.path.join(image_path, self.name + ".png"))
+    
+    def enforce(self, player):
+        if (self.name == "enforce_option1"):
+            player.weapons[0].bullet_cnt += 1
+        if (self.name == "enforce_option2"):
+            player.weapons[0].attack_delay //= 2
+        if (self.name == "enforce_option3"):
+            player.max_hp *= 2
+            player.hp = player.max_hp
+        if (self.name == "enforce_option4"):
+            player.speed += 2
+        if (self.name == "enforce_option5"):
+            player.weapon[0].bullet_dmg += 1
+        

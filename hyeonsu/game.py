@@ -41,11 +41,10 @@ to_y = 0
 #화면 일시정지
 stop_flag = False
 
-#선택지 고름
+#선택지 만듦
 choice = False
-enforce_option_list.append(Object((0, 0), "enforce_option1"))
-enforce_option_list.append(Object((0, 0), "enforce_option1"))
-enforce_option_list.append(Object((0, 0), "enforce_option1"))
+for i in range(1, 6):
+    enforce_option_list.append(Option("enforce_option" + str(i)))
 
 #마우스 위치
 m_pos = (0,0)
@@ -90,8 +89,9 @@ while running:
     
     if stop_flag:
         if choice:
-            if 100 < m_pos[0] < 400:
-                player.weapons[0].bullet_cnt += 1
+            for i in range(3):
+                if 100 + i * 400 < m_pos[0] < 400 + i * 400:
+                    enforce_option_list[i].enforce(player)
             choice = False
             stop_flag = False
         else:
